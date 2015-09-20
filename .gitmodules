@@ -1,0 +1,30 @@
+[submodule "bundle/buffergator"]
+	path = bundle/buffergator
+	url = git://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "bundle/node"]
+	path = bundle/node
+	url = git://github.com/moll/vim-node.git
+[submodule "bundle/javascript-syntax"]
+	path = bundle/javascript-syntax
+	url = git://github.com/jelera/vim-javascript-syntax.git
+[submodule "bundle/markdown"]
+	path = bundle/markdown
+	url = git://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "bundle/scriptease"]
+	path = bundle/scriptease
+	url = git://github.com/tpope/vim-scriptease.git
+[submodule "bundle/json"]
+	path = bundle/json
+	url = git://github.com/elzr/vim-json.git
+[submodule "bundle/esformatter"]
+	path = bundle/esformatter
+	url = https://github.com/millermedeiros/vim-esformatter.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = git://github.com/tpope/vim-surround.git
