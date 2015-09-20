@@ -120,44 +120,6 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Treat long lines as break lines (useful when moving around in them)
-"map j gj
-"map k gk
-
-" Smart way to move between windows
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-
-" Useful mappings for managing tabs
-"map <leader>tn :tabnew<cr>
-"map <leader>to :tabonly<cr>
-"map <leader>tc :tabclose<cr>
-"map <leader>tm :tabmove
-"map <leader>te :tabedit
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-"map <leader>tea :tabedit <c-r>=expand("%:p:h")<cr>/
-
-" Switch CWD to the directory of the open buffer
-"map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Specify the behavior when switching between buffers 
-"try
-"  set switchbuf=useopen,usetab,newtab
-"  set stal=2
-"catch
-"endtry
-
-" Return to last edit position when opening files (You want this!)
-"autocmd BufReadPost *
-"   \ if line("'\"") > 0 && line("'\"") <= line("$") |
-"   \   exe "normal! g`\"" |
-"   \ endif
-" Remember info about open buffers on close
-"set viminfo^=%
 
 " Using solution #2 from:
 " https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
@@ -206,6 +168,17 @@ nmap <leader>T :enew<cr>
 
 " Close a buffer
 nmap <leader>bq :bp <BAR> bd #<cr>
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+   \ if line("'\"") > 0 && line("'\"") <= line("$") |
+   \   exe "normal! g`\"" |
+   \ endif
+" Remember info about open buffers on close
+set viminfo^=%
+
+" Change cwd for current file path
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 """"""""""""""""""""""""""""""
 " => Status line
