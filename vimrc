@@ -57,6 +57,11 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Always launch a nerdtree
+autocmd vimenter * NERDTree
+" Close vim if NERDTree is the last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -127,7 +132,7 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 " CtrlP configuration
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
@@ -206,33 +211,16 @@ autocmd BufWrite *.json :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
 " Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-
-" Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+map <leader>g :vimgrep // **/*<left><left><left><left><left><left><left>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with vimgrep, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
 map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+map <leader>N :cp<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
@@ -281,6 +269,12 @@ function! HasPaste()
   en
     return ''
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable Folding markdown
+let g:vim_markdown_folding_disabled=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Javascript
