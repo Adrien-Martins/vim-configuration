@@ -61,6 +61,8 @@ set tm=500
 autocmd vimenter * NERDTree
 " Close vim if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"Auto focus on open buffer with nerdTree
+autocmd BufNew * wincmd l
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
