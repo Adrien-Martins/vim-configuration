@@ -63,7 +63,8 @@ autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "Auto focus on open buffer with nerdTree
 autocmd BufNew * wincmd l
-
+autocmd VimEnter * wincmd p
+let NERDTreeDirArrows=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
