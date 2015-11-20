@@ -40,3 +40,6 @@
 [submodule "bundle/conque-shell"]
 	path = bundle/conque-shell
 	url = https://github.com/vaibhav276/Conque-Shell.git
+[submodule "bundle/tern"]
+	path = bundle/tern
+	url = https://github.com/ternjs/tern_for_vim.git
