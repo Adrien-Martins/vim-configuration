@@ -8,6 +8,10 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Activate mouse
+set ttyfast
+set mouse=a
+set ttymouse=xterm
 
 " Turn on the WiLd menu
 set wildmenu
