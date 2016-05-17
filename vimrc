@@ -10,7 +10,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Activate mouse
 set ttyfast
-set mouse=a
+set mouse=nr
 set ttymouse=xterm
 
 " Turn on the WiLd menu
